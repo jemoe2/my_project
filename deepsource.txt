@@ -1,0 +1,33 @@
+
+
+deepsource issues list
+
+Welcome to DeepSource CLI
+Now ship good code directly from the command line.
+
+Login into DeepSource using the command : deepsource auth login
+
+Usage:
+  deepsource [command]
+
+Available Commands:
+  auth        Authenticate with DeepSource
+  completion  Generate the autocompletion script for the specified shell
+  config      Generate and Validate DeepSource config
+  help        Help about any command
+  issues      Show the list of issues in a file in a repository
+  repo        Operations related to the project repository
+  report      Report artifacts to DeepSource
+  version     Get the version of the DeepSource CLI
+
+Flags:
+  -h, --help   help for deepsource
+
+Use "deepsource [command] --help" for more information about a command.
+
+
+
+deepsource report --analyzer test-coverage --key python --value-file deepsource.toml
+
+deepsource --help  # لرؤية جميع الأوامر
+deepsource repo --help  # لتفاصيل أوامر الريبو

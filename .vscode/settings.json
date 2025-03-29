@@ -1,0 +1,40 @@
+{
+  "editor.formatOnSave": true,
+  "editor.codeActionsOnSave": {
+    "source.fixAll": "explicit",
+    "source.fixAll.ruff": "explicit",
+    "source.organizeImports.ruff": "explicit"
+  },
+  "python.analysis.typeCheckingMode": "strict",
+  "python.analysis.diagnosticSeverityOverrides": {
+    "reportUnusedImport": "error",
+    "reportMissingImports": "error",
+    "reportUndefinedVariable": "error",
+    "reportUnusedCallResult": "error",
+    "reportUnknownMemberType": "error",
+    "reportUnusedExpression": "error"
+  },
+  "[python]": {
+    "editor.defaultFormatter": "ms-python.black-formatter",
+    "editor.codeActionsOnSave": {
+      "source.fixAll": "explicit"
+    },
+    "editor.rulers": [120]
+  },
+  "black-formatter.importStrategy": "useBundled",
+  "black-formatter.args": ["--preview", "--line-length=88"],
+  "ruff.nativeServer": "on",
+  "python.testing.pytestEnabled": true,
+  "python.testing.pytestArgs": [
+    "--cov=my_project",
+    "--cov-report=term-missing",
+    "--cov-fail-under=90"
+  ],
+  "security.workspace.trust.untrustedFiles": "open",
+  "files.autoSave": "afterDelay",
+  "files.exclude": {
+    "**/.mypy_cache": true,
+    "**/.ruff_cache": true,
+    "**/__pycache__": true
+  }
+}

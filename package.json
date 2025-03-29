@@ -1,0 +1,32 @@
+{
+  "name": "my_project",
+  "version": "1.0.0",
+  "description": "مشروع نموذجي يوضح أفضل الممارسات في تنظيم مشاريع بايثون.",
+  "main": "index.js",
+  "directories": {
+    "doc": "docs",
+    "test": "tests"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Jemoe1/my_project.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/Jemoe1/my_project/issues"
+  },
+  "homepage": "https://github.com/Jemoe1/my_project#readme",
+  "devDependencies": {
+    "@eslint/js": "^9.19.0",
+    "eslint": "^9.19.0",
+    "eslint-config-airbnb": "^19.0.4",
+    "eslint-plugin-react": "^7.37.4",
+    "globals": "^15.14.0"
+  }
+}

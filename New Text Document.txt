@@ -1,0 +1,38 @@
+pre-commit autoupdate
+pre-commit install
+pre-commit run --files src/faulty_code.py --verbose
+pip install --upgrade setuptools
+pip3 install --user pre-commit
+pipx install pre-commit
+pre-commit clean
+pre-commit run --all-files --verbose
+source venv/bin/activate
+pip install --upgrade pre-commit
+
+git remote -v
+
+git remote set-url origin git@github.com:Jemoe1/my_project.git
+git fetch origin
+ssh -T git@github.com
+
+git remote set-url origin http://localhost:8888/Jemoe1/my_project.git
+export http_proxy=http://localhost:8888
+export https_proxy=http://localhost:8888
+
+pre-commit run --all-files
+ruff check . --fix
+pytest tests/
+flake8 --fix
+black .
+pre-commit run black --all-files --verbose
+pre-commit run semgrep --all-files --verbose
+pre-commit run black --all-files --verbose
+pre-commit run ruff --all-files --verbose
+pre-commit run mypy --all-files --verbose
+pre-commit run --files src/faulty_code.py --verbose
+
+git add src/enhanced_converter.py
+git commit -m "style: apply Black formatting to enhanced_converter.py"
+# Then handle the pre-commit config separately
+git add .pre-commit-config.yaml
+git commit -m "chore: update pre-commit configuration"

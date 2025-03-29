@@ -1,0 +1,20 @@
+# ملف .gitignore الموصى به
+__pycache__/
+*.py[cod]
+.env
+.venv/
+venv/
+*.log
+*.sqlite
+.DS_Store
+.ipynb_checkpoints
+"myenv/" 
+"myenv/" 
+"myenv/" 
+"node_modules/" 
+".vscode/" 
+"myenv/" 
+"node_modules/" 
+".vscode/" 
+"**/__pycache__/" 
+"**/*.pyc" 

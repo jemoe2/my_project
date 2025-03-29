@@ -1,0 +1,30 @@
+{
+  "version": "0.2",
+  "language": "en,ar",
+  "words": [
+    "amiri",
+    "polyglossia",
+    "amsmath",
+    "tikz",
+    "mdframed",
+    "xelatex",
+    "fontspec",
+    "includegraphics",
+    "hyperref",
+    "lstlisting",
+    "textbf",
+    "documentclass",
+    "usepackage",
+    "maghrib",
+    "kpsewhich",
+    "etoolbox",
+    "parindent",
+    "parskip",
+    "Qube",
+    "sonarsource",
+    "sonarqube"
+    // أضف بقية الكلمات هنا...
+  ],
+  "flagWords": [],
+  "ignorePaths": []
+}

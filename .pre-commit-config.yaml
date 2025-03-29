@@ -1,0 +1,82 @@
+---
+repos:
+  - repo: https://github.com/pre-commit/pre-commit-hooks
+    rev: v5.0.0
+    hooks:
+      - id: check-added-large-files
+        args:
+          - --maxkb=5120
+      - id: check-yaml
+      - id: end-of-file-fixer
+      - id: trailing-whitespace
+      - id: check-merge-conflict
+  - repo: https://github.com/astral-sh/ruff-pre-commit
+    rev: v0.9.5
+    hooks:
+      - id: ruff
+        args:
+          - --fix
+          - --show-fixes
+          - --exit-non-zero-on-fix
+        types:
+          - python
+  - repo: https://github.com/psf/black
+    rev: 24.4.0
+    hooks:
+      - id: black
+        args:
+          - --preview
+        language_version: python3.12
+  - repo: https://github.com/pre-commit/mirrors-isort
+    rev: v5.10.1
+    hooks:
+      - id: isort
+        args:
+          - --profile=black
+  - repo: https://github.com/pre-commit/mirrors-mypy
+    rev: v1.15.0
+    hooks:
+      - id: mypy
+        args:
+          - --strict
+          - --ignore-missing-imports
+        additional_dependencies:
+          - types-requests>=2.31.0.1
+  - repo: https://github.com/PyCQA/bandit
+    rev: 1.8.2
+    hooks:
+      - id: bandit
+        args:
+          - -r
+          - -lll
+          - -c
+          - pyproject.toml
+  - repo: https://github.com/streetsidesoftware/cspell-cli
+    rev: v8.17.2
+    hooks:
+      - id: cspell
+        args:
+          - --config
+          - .cspell.json
+  - repo: https://github.com/pre-commit/mirrors-prettier
+    rev: v4.0.0-alpha.8
+    hooks:
+      - id: prettier
+        args:
+          - --write
+  - repo: local
+    hooks:
+      - id: security-scan
+        name: Security Scan
+        entry: bandit -r . -c pyproject.toml
+        language: system
+        types:
+          - python
+        pass_filenames: false
+      - id: fix-toml
+        name: Fix TOML
+        entry: python fix_toml.py
+        language: system
+        files: \.toml$
+        types:
+          - toml

@@ -1,0 +1,58 @@
+version = 1
+
+# استبعاد كل الملفات ماعدا الملفات المطلوبة
+exclude_patterns = [
+  "*"  # استبعاد كل شيء مبدئيًا
+]
+
+# تضمين الملفات المطلوبة
+include_patterns = [
+  "src/enhanced_converter.py"
+]
+
+[[analyzers]]
+name = "python"
+enabled = true
+
+  [analyzers.config]
+  security_checks = true
+  runtime_version = "3.10"  # تحديث إلى أحدث إصدار متاح
+  enable_performance_checks = true
+  enable_experimental_checks = true
+  run_linters = true
+  test_patterns = [
+    "tests/test_*.py",
+    "test_*.py"
+  ]
+  disable = [
+    "use-symbolic-message-instead",
+    "unnecessary-lambda-assignment"
+  ]
+
+[[analyzers]]
+name = "test-coverage"
+enabled = true
+
+[[transformers]]
+name = "ruff"
+enabled = true
+args = ["--fix", "--select=ALL", "--ignore=ANN"]
+
+[[transformers]]
+name = "black"
+enabled = true
+args = ["--line-length=88"]
+
+[[transformers]]
+name = "isort"
+enabled = true
+
+[[transformers]]
+name = "autofix"
+enabled = true
+
+[[include_paths]]
+path = "src/"
+
+[[exclude_paths]]
+path = "tests/"

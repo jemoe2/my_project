@@ -1,0 +1,32 @@
+---
+name: Linting and Formatting
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+jobs:
+  lint:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: 3.x
+      - name: Install dependencies
+        run: |
+          pip install black autopep8 flake8 pylint ruff
+      - name: Run Black
+        run: black . --check
+      - name: Run Autopep8
+        run: autopep8 --in-place --recursive .
+      - name: Run Flake8
+        run: flake8 .
+      - name: Run Pylint
+        run: pylint **/*.py
+      - name: Run Ruff
+        run: ruff . --fix
