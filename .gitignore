@@ -1,20 +1,10 @@
-# ملف .gitignore الموصى به
-__pycache__/
-*.py[cod]
-.env
-.venv/
-venv/
-*.log
-*.sqlite
-.DS_Store
-.ipynb_checkpoints
+"# Python virtual environments" 
 "myenv/" 
-"myenv/" 
-"myenv/" 
-"node_modules/" 
-".vscode/" 
-"myenv/" 
-"node_modules/" 
-".vscode/" 
+"venv/" 
+"env/" 
 "**/__pycache__/" 
 "**/*.pyc" 
+"node_modules/" 
+".vscode/" 
+"myenv/" 
+"!myenv/lib/python3.12/site-packages/semgrep/bin/semgrep-core" 
