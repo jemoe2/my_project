@@ -36,3 +36,6 @@ git commit -m "style: apply Black formatting to enhanced_converter.py"
 # Then handle the pre-commit config separately
 git add .pre-commit-config.yaml
 git commit -m "chore: update pre-commit configuration"
+
+git commit -m "commit"
+git push origin main

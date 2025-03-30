@@ -47,9 +47,9 @@ args = ["--line-length=88"]
 name = "isort"
 enabled = true
 
-[[transformers]]
-name = "autofix"
-enabled = true
+#[[transformers]]
+#name = "autofix"
+#enabled = true
 
 [[include_paths]]
 path = "src/"

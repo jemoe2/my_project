@@ -27,7 +27,7 @@ Use "deepsource [command] --help" for more information about a command.
 
 
 
-deepsource report --analyzer test-coverage --key python --value-file deepsource.toml
+deepsource report --analyzer test-coverage --key python --value-file .deepsource.toml
 
 deepsource --help  # لرؤية جميع الأوامر
 deepsource repo --help  # لتفاصيل أوامر الريبو

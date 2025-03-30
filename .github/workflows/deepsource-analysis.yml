@@ -39,30 +39,31 @@ jobs:
         if: runner.os == 'Windows'
         shell: pwsh
         run: >
-          if (-not (Test-Path "deepsource.toml")) {
-            Write-Error "❌ ملف deepsource.toml غير موجود!"
+          if (-not (Test-Path ".deepsource.toml")) {
+            Write-Error "❌ ملف .deepsource.toml غير موجود!"
             exit 1
           }
 
-          C:\deepsource_cli\deepsource.exe config validate --config-file deepsource.toml
+          C:\deepsource_cli\deepsource.exe config validate --config-file .deepsource.toml
       - name: Validate Config File (Ubuntu)
         if: runner.os == 'Linux'
         shell: bash
         run: |
-          if [ ! -f "deepsource.toml" ]; then
-            echo "❌ ملف deepsource.toml غير موجود!"
+          if [ ! -f ".deepsource.toml" ]; then
+            echo "❌ ملف .deepsource.toml غير موجود!"
             exit 1
-          }
-          deepsource config validate --config-file deepsource.toml
+          fi
+          deepsource config validate --config-file .deepsource.toml
+
       - name: Run Analysis (Windows)
         if: runner.os == 'Windows'
         shell: pwsh
-        run: C:\deepsource_cli\deepsource.exe report --config-file deepsource.toml
+        run: C:\deepsource_cli\deepsource.exe report --config-file .deepsource.toml
         env:
           DEEPSOURCE_DSN: ${{ secrets.DEEPSOURCE_DSN || '' }}
       - name: Run Analysis (Ubuntu)
         if: runner.os == 'Linux'
         shell: bash
-        run: deepsource report --config-file deepsource.toml
+        run: deepsource report --config-file .deepsource.toml
         env:
           DEEPSOURCE_DSN: ${{ secrets.DEEPSOURCE_DSN }}
