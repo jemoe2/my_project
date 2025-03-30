@@ -6,5 +6,4 @@ env/
 **/*.pyc
 node_modules/
 .vscode/
-!myenv/lib/python3.12/site-packages/semgrep/bin/semgrep-core
 
